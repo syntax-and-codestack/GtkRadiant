@@ -30,7 +30,7 @@ extern MainFrame* g_pParentWnd;
 // globals
 
 int g_nBrushId = 0;
-bool g_bBrushFakeLight;
+bool g_bBrushFakeLight;//fake lighting on resize so it saves ram and runs smoother
 
 #ifdef ENABLE_GROUPS
 const char* Brush_Name( brush_t *b ){
@@ -40,8 +40,8 @@ const char* Brush_Name( brush_t *b ){
 		   sprintf( cBuff, "Brush %i", b->numberId );
 		   Brush_SetEpair( b, "Name", cBuff );
 	   }
-       if ( Brush_Resize( b ) ) {
-           g_bBrushFakeLight = true;
+           if ( Brush_Resize( b ) ) {
+                   g_bBrushFakeLight = true;
 		   Sys_Printf("Brush %i has fake lighting");
 	   }
 
@@ -53,12 +53,14 @@ brush_t *Brush_Alloc(){
 	brush_t *b = (brush_t*)qmalloc( sizeof( brush_t ) );
 	return b;
 }
-/*
-   void Brush_Free(brush_t *b)
-   {
-   free(b);
-   }
- */
+
+brush_t * Brush_Free(brush_t *b)
+{
+	if( g_qeglobals.m_bBrushPrimitMode = 0 ){
+            free( b );
+	}
+}
+
 void PrintWinding( winding_t *w ){
 	int i;
 
