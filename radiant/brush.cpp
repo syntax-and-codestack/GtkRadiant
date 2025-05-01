@@ -21,7 +21,6 @@
 
 #include "stdafx.h"
 #include <assert.h>
-#include <glib/gi18n.h>
 #include "winding.h"
 #include <limits.h>
 #include "filters.h"
@@ -31,15 +30,21 @@ extern MainFrame* g_pParentWnd;
 // globals
 
 int g_nBrushId = 0;
+bool g_bBrushFakeLight;
 
 #ifdef ENABLE_GROUPS
 const char* Brush_Name( brush_t *b ){
 	static char cBuff[1024];
 	b->numberId = g_nBrushId++;
-	if ( g_qeglobals.m_bBrushPrimitMode ) {
-		sprintf( cBuff, "Brush %i", b->numberId );
-		Brush_SetEpair( b, "Name", cBuff );
-	}
+	   if ( g_qeglobals.m_bBrushPrimitMode ) {
+		   sprintf( cBuff, "Brush %i", b->numberId );
+		   Brush_SetEpair( b, "Name", cBuff );
+	   }
+       if ( Brush_Resize( b ) ) {
+           g_bBrushFakeLight = true;
+		   Sys_Printf("Brush %i has fake lighting");
+	   }
+
 	return cBuff;
 }
 #endif
