@@ -20,6 +20,7 @@
  */
 
 #include "stdafx.h"
+#include "qertypes.h"
 #include <assert.h>
 #include "winding.h"
 #include <limits.h>
@@ -31,6 +32,8 @@ extern MainFrame* g_pParentWnd;
 
 int g_nBrushId = 0;
 bool g_bBrushFakeLight;
+
+void Brush_Macro( int * macro );
 
 #ifdef ENABLE_GROUPS
 const char* Brush_Name( brush_t *b ){
@@ -49,16 +52,25 @@ const char* Brush_Name( brush_t *b ){
 }
 #endif
 
+bool Brush_FakeLighting( brush_t * b ){
+	if( Brush_Resize( b, b->mins, b->maxs ) )
+	{
+		Brush_Macro( LUMP_LIGHTING );
+	}
+}
+
 brush_t *Brush_Alloc(){
 	brush_t *b = (brush_t*)qmalloc( sizeof( brush_t ) );
 	return b;
 }
-/*
-   void Brush_Free(brush_t *b)
-   {
-   free(b);
-   }
- */
+
+brush_t * Brush_Free(brush_t *b)
+{
+	if( g_qeglobals.m_bBrushPrimitMode = 0){
+        free(b);
+	}
+}
+
 void PrintWinding( winding_t *w ){
 	int i;
 
