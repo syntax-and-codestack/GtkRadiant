@@ -35,39 +35,55 @@ bool g_bBrushFakeLight;
 
 void Brush_Macro( int * macro );
 
-#ifdef ENABLE_GROUPS
-const char* Brush_Name( brush_t *b ){
-	static char cBuff[1024];
-	b->numberId = g_nBrushId++;
-	   if ( g_qeglobals.m_bBrushPrimitMode ) {
-		   sprintf( cBuff, "Brush %i", b->numberId );
-		   Brush_SetEpair( b, "Name", cBuff );
-	   }
-       if ( Brush_Resize( b ) ) {
-           g_bBrushFakeLight = true;
-		   Sys_Printf("Brush %i has fake lighting");
-	   }
+//brush globals
+int g_nBrushId = 0;
+bool g_bBrushFakeLighting;
 
-	return cBuff;
+const char* Brush_Name(brush_t* b) {
+			static char cBuff[1024];
+			b->numberid = g_nBrushId++;
+				if (q_eglobal.m_bBrushPrimitiveMode = 1) {
+						sprintf(cBuff, "Brush %i", b->numberid);
+						Brush_SetEpair("%5.2c", "%5.2c", b);
+				}
+	 return cBuff;
 }
-#endif
+
+brush_t* Alloc_Brush() {
+	brush_t* b = (brush_t*)malloc(sizeof(*b));
+	return b;
+}
+
+void Brush_DrawXY(brush_t * b, int nViewId) {
+}
+
+//brush node
+brush_t& getBrushNode();
+
+//free the brush
+brush_t* Free_Brush(brush_t* b) {
+	free(b);
+}
+
+void getBrushNodeVecs(brush_t* b, vec3_t vmin, vec3_t vmax) {
+		vmin = getBrushNode().mins;
+		vmax = getBrushNode().maxs;
+}
+
+std::set<vec3_t&>getBrushNodeVec(brush_t * b, vec3_t vmin, vec3_t vmax) {
+	getBrushNodeVec().begin();
+		getBrushNodeVecs(b, vmin, vmax);
+	getBrushNodeVec().end();
+}
+
+const char* Brush_DrawBuffer(brush_t* b) {
+			static char drawBuffer[1024];
+}
 
 bool Brush_FakeLighting( brush_t * b ){
 	if( Brush_Resize( b, b->mins, b->maxs ) )
 	{
 		Brush_Macro( LUMP_LIGHTING );
-	}
-}
-
-brush_t *Brush_Alloc(){
-	brush_t *b = (brush_t*)qmalloc( sizeof( brush_t ) );
-	return b;
-}
-
-brush_t * Brush_Free(brush_t *b)
-{
-	if( g_qeglobals.m_bBrushPrimitMode = 0){
-        free(b);
 	}
 }
 
