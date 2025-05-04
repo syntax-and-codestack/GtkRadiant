@@ -89,6 +89,10 @@ static int * Brush_Count( brush_t* b ) {
 		return countBuff;
 }
 
+std::size_t Brush_Size( brush_t * b ){
+		return sizeof(*b);
+}
+
 bool Brush_FakeLighting( brush_t * b ){
 	if( Brush_Resize( b, b->mins, b->maxs ) )
 	{
