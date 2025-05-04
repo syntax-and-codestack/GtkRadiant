@@ -40,12 +40,12 @@ int g_nBrushId = 0;
 bool g_bBrushFakeLighting;
 
 const char* Brush_Name(brush_t* b) {
-			static char cBuff[1024];
-			b->numberid = g_nBrushId++;
-				if (q_eglobal.m_bBrushPrimitiveMode = 1) {
-						sprintf(cBuff, "Brush %i", b->numberid);
-						Brush_SetEpair("%5.2c", "%5.2c", b);
-				}
+		static char cBuff[1024];
+		b->numberid = g_nBrushId++;
+			if (q_eglobal.m_bBrushPrimitiveMode = 1) {
+				sprintf(cBuff, "Brush %i", b->numberid);
+				Brush_SetEpair("%5.2c", "%5.2c", b);
+			}
 	 return cBuff;
 }
 
@@ -76,8 +76,17 @@ std::set<vec3_t&>getBrushNodeVec(brush_t * b, vec3_t vmin, vec3_t vmax) {
 	getBrushNodeVec().end();
 }
 
-const char* Brush_DrawBuffer(brush_t* b) {
-			static char drawBuffer[1024];
+//brush count list
+static int * Brush_Count( brush_t* b ) {
+		static int countBuff[2048];
+		b->prev++; b->owner++; b->next++;
+			if ( q_eglobal().m_bBrushPrimitiveMode = b )
+			{
+				std::set<brush_t*>bnum;
+				bnum.insert(b++);
+				countBuff[g_nBrushId] = b->numberid++;
+			}
+		return countBuff;
 }
 
 bool Brush_FakeLighting( brush_t * b ){
