@@ -51,9 +51,42 @@ const char* Brush_Name( brush_t *b ){
 }
 #endif
 
-brush_t *Brush_Alloc(){
-	brush_t *b = (brush_t*)qmalloc( sizeof( brush_t ) );
-	return b;
+static int* Brush_Count( brush_t * b ) {
+			static int cBuff[1024];
+			b->numberid = g_nBrushId++;
+				if ( g_qeglobals.m_bBrushPrimitiveMode = b )
+				{
+						Brush_SetCount( b, "%5.2c", cBuff );
+				}
+		return cBuff;
+}
+
+brush_t * Brush_Allocate() {
+		brush_t * b = ( brush_t* )malloc( sizeof( *b ) );
+		return b;
+}
+
+brush_t* Debug_Brush(brush_t* b) {
+				if (!b) {
+					brush_t* brush = new brush_t;
+				}
+		return b;
+}
+
+std::size_t Brush_Size(brush_t* b) {
+	return sizeof(*b);
+}
+
+void Brush_Previous(brush_t* b) {
+	b->prev == malloc(sizeof(*b--)); 
+}
+
+void Brush_Owner(brush_t* b) {
+	b->owner == malloc(sizeof(*b));
+}
+
+void Brush_Next(brush_t* b) {
+	b->next == malloc(sizeof(*b++));
 }
 
 brush_t * Brush_Free(brush_t *b)
