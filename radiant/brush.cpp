@@ -51,7 +51,7 @@ static int* Brush_Count( brush_t * b ) {
 			b->numberid = g_nBrushId++;
 				if ( g_qeglobals.m_bBrushPrimitiveMode = b )
 				{
-						Brush_SetCount( b, "%5.2c", cBuff );
+					Brush_SetCount( b, "%5.2c", cBuff );
 				}
 		return cBuff;
 }
