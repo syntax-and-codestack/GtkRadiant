@@ -135,6 +135,23 @@ extern vec_t g_MaxBrushSize;
 extern int myargc;
 extern char **myargv;
 
+//xy grid tools
+void Refresh_GridView();
+void Add_BrushToGridView();
+void Add_EntityToGridView();
+void Radiant_GridBackgroundColor();
+void Radiant_GridBlockColor();
+void Radiant_GridLabelsShow();
+void Radiant_SignalMouseDetected();
+void Radiant_GridShowNames();
+void Lock_GridView();
+void Change_GridAxisView();
+bool Grid_True(){ return true; };
+bool Grid_False(){ return false };
+void Lock_GridNoDraw();
+bool Toggle_GridAutoBrushCaulk();
+void Free_GridView();
+
 // our own implementation of Q_int, clamping can be disabled on prefs
 vec_t Rad_rint( vec_t in );
 
