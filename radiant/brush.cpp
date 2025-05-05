@@ -34,20 +34,15 @@ int g_nBrushId = 0; // brush number
 bool g_bBrushFakeLight;//fake lighting on resize so it saves ram and runs smoother
 
 #ifdef ENABLE_GROUPS
-//Brush Name To Printf
-const char* Brush_Name( brush_t *b ){
-	static char cBuff[1024];//brush count buffer
-	b->numberId = g_nBrushId++;//brush number id = the brush id *aka* the brush number
-	   if ( g_qeglobals.m_bBrushPrimitMode ) { //if its selected
-		   sprintf( cBuff, "Brush %i", b->numberId ); //printf the buffer to "Brush *brush number* which = b->numberId
-		   Brush_SetEpair( b, "Name", cBuff ); //sets the epair to the brush its name and the counter so it adds to the new counted brush
-	   }
-           if ( Brush_Resize( b ) ) { // if the brush resizes
-                   g_bBrushFakeLight = true; //fake lighting automatically enables to save ram
-		   Sys_Printf("Brush %i has fake lighting"); //what brush has the fake lighting message
-	   }
 
-	return cBuff; // return the brush counter buffer
+const char* Brush_Name( brush_t *b ){
+	static char cBuff[1024];
+	b->numberId = g_nBrushId++;
+	   if ( g_qeglobals.m_bBrushPrimitMode ) { 
+		   sprintf( cBuff, "Brush %i", b->numberId );
+		   Brush_SetEpair( b, "Name", cBuff );
+	   }
+	return cBuff;
 }
 #endif
 
