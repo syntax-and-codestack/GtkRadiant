@@ -135,6 +135,19 @@ extern vec_t g_MaxBrushSize;
 extern int myargc;
 extern char **myargv;
 
+//printing tools
+void Plane_Print( plane_t * p );
+void Face_Print( face_t * f );
+void Texture_Print( texdef_t * textool );
+void Shader_Print( void * s );
+
+void Int_Print( int * i );
+void Float_Print( float * f );
+void Bool_Print( bool * b );
+void Double_Print( double * d );
+void Char_Print( char * c );
+
+
 //xy grid tools
 void Refresh_GridView();
 void Add_BrushToGridView();
