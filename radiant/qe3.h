@@ -153,6 +153,8 @@ typedef struct server_s{
 	qboolean CONNECT_ENTITY();
 	server_t * SOCKET();
 	int SERVER_NUM_LIST[];
+	float QUAKE_SERVER_PING;
+	brush_t * SERVER_BRUSH;
 }server_t;
 
 
