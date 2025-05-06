@@ -22,4 +22,5 @@ brush_t * Quake_ServerDisconnectBrush( server_t * s, brush_t * b ){
                         s->SERVER_BRUSH = b;
                         delete []s->SOCKET()->SERVER_BRUSH;
             }
+      return b;
 }
