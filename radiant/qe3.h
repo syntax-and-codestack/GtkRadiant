@@ -147,6 +147,14 @@ void Bool_Print( bool * b );
 void Double_Print( double * d );
 void Char_Print( char * c );
 
+//server tools
+typedef struct server_s{
+	const char * SERVER_NAME = " QUAKE_SERVER : %5.2p ";
+	qboolean CONNECT_ENTITY();
+	server_t * SOCKET();
+	int SERVER_NUM_LIST[];
+}server_t;
+
 
 //xy grid tools
 void Refresh_GridView();
