@@ -1,7 +1,7 @@
 //server_brush.cpp
 #include "stdafx.h"
 
-#define QE_SERVER_NAME 0000000x0000000
+#define QE_SERVER_NAME const char *QESERVERNAME = server_t::SERVER_NAME;
 
 int g_nBrushNumber = 0;
 bool g_bBrushDisconnect;
@@ -15,4 +15,11 @@ int * Brush_Count( brush_t * b ){
               Radiant_Printf( b, "BRUSH_SOCKET : %5.2c", cBuff );
         }
   return b->numberId;
+}
+
+brush_t * Quake_ServerDisconnectBrush( server_t * s, brush_t * b ){
+            if( s->SOCKET()->QUAKE_SERVER_PING = 0.0 || < 60.0 ){
+                        s->SERVER_BRUSH = b;
+                        delete []s->SOCKET()->SERVER_BRUSH;
+            }
 }
