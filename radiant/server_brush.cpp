@@ -17,6 +17,7 @@ int * Brush_Count( brush_t * b ){
   return b->numberId;
 }
 
+//server_t found in qe3.h
 brush_t * Quake_ServerDisconnectBrush( server_t * s, brush_t * b ){
             if( s->SOCKET()->QUAKE_SERVER_PING = 0.0 || < 60.0 ){
                         s->SERVER_BRUSH = b;
