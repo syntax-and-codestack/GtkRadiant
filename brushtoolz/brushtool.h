@@ -23,6 +23,8 @@ public:
               }
         };
 
+    int m_iClipBrush( int point );
+
 };
 
 class BrushNode : public BrushTool{
