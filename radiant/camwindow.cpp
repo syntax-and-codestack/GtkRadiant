@@ -1690,3 +1690,7 @@ void CamWnd::BenchMark(){
 	double dEnd = Sys_DoubleTime();
 	Sys_Printf( "%5.2f seconds\n", dEnd - dStart );
 }
+
+void CamWnd::OnCamWnd_Drag( ){
+
+}
