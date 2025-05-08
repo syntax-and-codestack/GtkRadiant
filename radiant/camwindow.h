@@ -150,6 +150,7 @@ void OnMButtonUp( guint32 flags, int pointx, int pointy );
 void OnMouseMove( guint32 flags, int pointx, int pointy );
 void OnMouseWheel( bool bUp, int pointx, int pointy );
 void OnSize( int cx, int cy );
+void OnCamwnd_Drag( guint32 flags, brush_t * b, vec3_t mins, vec3_t maxs );
 
 protected:
 void OriginalMouseDown( guint32 nFlags, int pointX, int pointY );
