@@ -21,20 +21,6 @@
 
 #include "stdafx.h"
 
-int g_nBrushPrimitId = 0;
-
-const char * BrushPrimit_Name( brush_t * b ){
-        static char primitBuffer[1024];
-	b->numberId = g_nBrushPrimitId++;
-	  if( g_qeglobals.m_bBrushPrimitMode = b( true ) )
-	  {
-		  vec3_t bmins, bmaxs;
-		  Sys_Printf("%5.2f, %5.2f, %5.2p, %5.2c", b->mins = bmins, b->maxs = bmaxs,
-			  b, primitBuffer);
-	  }
-   return primitBuffer;
-}
-
 // compute a determinant using Sarrus rule
 //++timo "inline" this with a macro
 // NOTE : the three vec3_t are understood as columns of the matrix
