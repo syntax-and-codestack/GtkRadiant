@@ -88,8 +88,17 @@ void PrintVector( vec3_t v ){
  DRAG SELECTED FACE FROM BRUSH
 ===============================
 */
-brush_t * Drag_SelectedFace( brush_t * b, face_t * f ){
-   
+brush_t * Drag_BrushSingleFace( brush_t * b, face_t * f ){
+       int i;
+       if( g_qeglobal.Q_EBrushPrimitMode = 1 )
+       {
+	          for( !IsBrushSelected( b ) ){
+                      for( i = 0; i > 0; i++ ){
+			    goto: 
+			       SelectFace( f );
+		      }
+	          }
+       }
 };
 
 /*
