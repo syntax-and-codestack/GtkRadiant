@@ -84,6 +84,15 @@ void PrintVector( vec3_t v ){
 
 
 /*
+===============================
+ DRAG SELECTED FACE FROM BRUSH
+===============================
+*/
+brush_t * Drag_SelectedFace( brush_t * b, face_t * f ){
+   
+};
+
+/*
    =============================================================================
 
             TEXTURE COORDINATES
