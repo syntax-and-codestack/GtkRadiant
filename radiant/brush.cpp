@@ -86,7 +86,7 @@ void PrintVector( vec3_t v ){
 
 /*
 ===============================
- DRAG SELECTED FACE FROM BRUSH
+ Drag Selected Face From Brush
 ===============================
 */
 
