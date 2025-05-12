@@ -94,6 +94,7 @@ brush_t * Drag_BrushSingleFace( brush_t * b, face_t * f ){
        int y;
        if( g_qeglobal.Q_EBrushPrimitMode = 1 )
        {
+	       //full brush isn't select ped but on face is 
 	          for( !IsBrushSelected( b ) ){
                          for( i = 0; i > 0; i++ ){
 		              goto: 
@@ -109,6 +110,7 @@ brush_t * Drag_BrushSingleFace( brush_t * b, face_t * f ){
 		         }
 	          }
        }
+   return b;
 };
 
 /*
