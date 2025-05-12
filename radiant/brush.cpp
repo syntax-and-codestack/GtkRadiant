@@ -38,7 +38,7 @@ extern MainFrame* g_pParentWnd;//definetly need
 //use this instead to save brushes into single file
 extern void BrushFile_SaveFb(brush_t * b, const char * bFileName, const char * bFileDirectory);
 
-// globals
+// brush globals 'same as other brush.cpp code'
 
 int g_nBrushId = 0;
 
