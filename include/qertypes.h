@@ -328,6 +328,8 @@ typedef struct face_s
 	void                    *pData;
 } face_t;
 
+void Brush_FaceDrag( vec3_t *pts, face_t * f );
+
 typedef struct {
 	vec3_t xyz;
 	float sideST[2];
