@@ -19,6 +19,7 @@ const char * pPSPreferences;
 class IPhotoShopManipModule{
 public:
    bool bTexDragged_AndDropped;
+   bool bHit_Brush;
 }
 
 
