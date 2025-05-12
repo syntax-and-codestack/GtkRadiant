@@ -89,7 +89,7 @@ void PrintVector( vec3_t v ){
 ===============================
 */
 brush_t * Drag_BrushSingleFace( brush_t * b, face_t * f ){
-       int i;
+       int i; int x; int y;
        if( g_qeglobal.Q_EBrushPrimitMode = 1 )
        {
 	          for( !IsBrushSelected( b ) ){
@@ -99,7 +99,9 @@ brush_t * Drag_BrushSingleFace( brush_t * b, face_t * f ){
 			      Face_Alloc( *f );
 			      SelectFace( *f );
 			          for( f; SelectFace( f ); b = selected_brushes.next ; b != NULL && b != &selected_brushes; b = b->next; f->next ){
-					    
+					    while( DispatchOnLButtonUp( i, x, y++ ) ){
+						    
+					    }
 				  }
 		      }
 	          }
