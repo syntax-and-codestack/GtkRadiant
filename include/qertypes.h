@@ -827,7 +827,7 @@ typedef struct
 	// tells if we are internally using brush primitive (texture coordinates and map format)
 	// this is a shortcut for IntForKey( g_qeglobals.d_project_entity, "brush_primit" )
 	// NOTE: must keep the two ones in sync
-	bool m_bBrushPrimitMode;
+	bool bBrushPrimitMode;
 
 	/*!
 	   win32: engine full path.
