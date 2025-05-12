@@ -64,6 +64,11 @@ void Brush_RefreshShader( brush_t *b );
 int         AddPlanept( float *f );
 float       SetShadeForPlane( plane_t *p );
 
+qboolean SelectPlane( plane_t * p );
+brush_t * Drag_BrushSinglePlane( brush_t * b, plane_t * p );
+qboolean SelectFace( face_t * f );
+brush_t * Drag_BrushSingleFace( brush_t * b, face_t * f );
+
 face_t* Face_Alloc( void );
 void        Face_Free( face_t *f );
 face_t* Face_Clone( face_t *f );
