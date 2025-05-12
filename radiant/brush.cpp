@@ -25,8 +25,18 @@
 #include <limits.h>
 #include "filters.h"
 
-extern MainFrame* g_pParentWnd;
-extern void MemFile_fprintf( MemStream* pMemFile, const char* pText, ... );
+/*
+	WHAT'S MODIFIED:
+- you can now save a single brush or multiple into a single file to be spawned later!
+- drag and drop texdef to brush faces
+- seperate selected faces from brush *may crash radiant though :)*
+*/
+
+extern MainFrame* g_pParentWnd;//definetly need
+//extern void MemFile_fprintf( MemStream* pMemFile, const char* pText, ... );//L dont use...
+
+//use this instead to save brushes into single file
+extern void BrushFile_SaveFb(brush_t * b, const char * bFileName, const char * bFileDirectory);
 
 // globals
 
