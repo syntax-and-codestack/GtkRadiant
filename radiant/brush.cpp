@@ -94,10 +94,13 @@ brush_t * Drag_BrushSingleFace( brush_t * b, face_t * f ){
        {
 	          for( !IsBrushSelected( b ) ){
                       for( i = 0; i > 0; i++ ){
-			    goto: 
-			       Face_Alloc( *f );
-			       SelectFace( *f );
-			          for( f; SelectFace( f ); b = selected_brushes.next ; b != NULL && b != &selected_brushes; b = b->next; f->
+		          goto: 
+			   
+			      Face_Alloc( *f );
+			      SelectFace( *f );
+			          for( f; SelectFace( f ); b = selected_brushes.next ; b != NULL && b != &selected_brushes; b = b->next; f->next ){
+					    
+				  }
 		      }
 	          }
        }
