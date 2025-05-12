@@ -13,6 +13,7 @@ typedef brush_t pluginbrush; //holds brush_t struct info *IMPORTANT*
 typedef void ( *PFN_PLUGIN_BRUSH_GL ) ( brush_t * b, int GLEnum );
 typedef void ( *PFN_PLUGIN_BRUSH_LIST ) ( brush_t * b , bool bSel );
 typedef bool ( *PFN_PLUGIN_BRUSH_SELECTED ) ( brush_t * b, bool bSel = 1 );
-typedef void ( *PFN_PLUGIN_BRUSH_TEXTURE ] ( brush_t * b, qtexture_t * texture, bool bDetailed );
+typedef void ( *PFN_PLUGIN_BRUSH_TEXTURE ) ( brush_t * b, qtexture_t * texture, bool bDetailed );
+typedef brush_t ( *PFN_BRUSH_CREATE ) ( brush_t * b, vec3_t mins, vec3_t maxs, qtexture_t * btexture, bool bSel );
 
 #endif
