@@ -39,6 +39,7 @@ CEntityEclassModel::CEntityEclassModel (){
 	m4x4_identity( m_inverse_transform );
 }
 
+//ucky code... but i aint changing it
 CEntityEclassModel::~CEntityEclassModel (){
 	if ( m_name.c_str()[0] != '\0'
 		 && m_version.c_str()[0] != '\0' ) {
