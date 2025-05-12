@@ -14,9 +14,9 @@ this file allows photoshop files "*.ps" to be textured to brushes
 
 class IPhotoshopPlugin;
 
-CString * pPSExtension = "*.ps";
-CString * pPSFileName;
-CString * pPSPreferences;
+const char * pPSExtension = "*.ps";
+const char * pPSFileName;
+const char * pPSPreferences;
 
 
 #endif
