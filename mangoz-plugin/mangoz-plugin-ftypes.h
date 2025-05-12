@@ -12,6 +12,6 @@ const char* BRUSH_FILE_EXTENSION = "*.qebrushaddress";//brush file extension
 const char* ENTITY_FILE_EXTENSION = "*.qeentityaddress";//entity file extension
 const char* REGION_FILE_EXTENSION = "*.qeregionaddress";//region file extension
 
-void FLoad( const char* pFileName, const char *pExtension );//load the file
+void FLoad( const char* pFileName, const char *pExtension );//load the file... duh
 
 #endif
