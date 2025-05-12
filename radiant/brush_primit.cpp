@@ -608,5 +608,5 @@ void GLMatMul( vec_t M[4][4], vec_t A[4], vec_t B[4] ){
 }
 
 qboolean IsBrushPrimitMode(){
-	return( g_qeglobals.m_bBrushPrimitMode );
+	return( g_qeglobals.Q_EBrushPrimitMode );
 }
