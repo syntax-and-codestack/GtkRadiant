@@ -30,6 +30,7 @@
 - you can now save a single brush or multiple into a single file to be spawned later!
 - drag and drop texdef to brush faces
 - seperate selected faces from brush *may crash radiant though :)*
+- if you drag click mouse in 3d viewport you can create brushes that way! kinda like *netradiant*
 */
 
 extern MainFrame* g_pParentWnd;//definetly need
@@ -88,30 +89,6 @@ void PrintVector( vec3_t v ){
  DRAG SELECTED FACE FROM BRUSH
 ===============================
 */
-brush_t * Drag_BrushSingleFace( brush_t * b, face_t * f ){
-       int i; 
-       int x; 
-       int y;
-       if( g_qeglobal.Q_EBrushPrimitMode = 1 )
-       {
-	       //full brush isn't select ped but on face is 
-	          for( !IsBrushSelected( b ) ){
-                         for( i = 0; i > 0; i++ ){
-		              goto: 
-			   
-			      Face_Alloc( *f );
-			      SelectFace( *f );
-			          for( f; SelectFace( f ); b = selected_brushes.next ; b != NULL && b != &selected_brushes; b = b->next; f->next ){
-					    while( DispatchOnLButtonUp( i, x, y++ ) && SelectFace( f ) ){
-						    UnsnapBrush_Face( b, f );
-						    MoveBrush_Face( f );
-					    }
-				  }
-		         }
-	          }
-       }
-   return b;
-};
 
 /*
    =============================================================================
