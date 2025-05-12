@@ -5,6 +5,6 @@
 
 //NOTE: brush_t is old we want new definition for plugin
 
-typedef brush_t pluginbrush{}; //holds brush_t struct info *IMPORTANT*
+typedef brush_t pluginbrush; //holds brush_t struct info *IMPORTANT*
 
 #endif
